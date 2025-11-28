@@ -56,13 +56,11 @@ function saveTasksForUser(email, tasks) {
   localStorage.setItem(getTasksKey(email), JSON.stringify(tasks));
 }
 
-// Email validation: must be valid format and end with @gmail.com
 function isValidGmail(email) {
-  const basicPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // simple structure check [web:12][web:19]
-  return basicPattern.test(email) && email.toLowerCase().endsWith("@gmail.com"); // [web:15]
+  const basicPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+  return basicPattern.test(email) && email.toLowerCase().endsWith("@gmail.com"); 
 }
 
-// Render functions
 function renderTasks() {
   taskList.innerHTML = "";
 
@@ -106,7 +104,6 @@ function renderTasks() {
     li.appendChild(actionsDiv);
     taskList.appendChild(li);
 
-    // Events
     checkbox.addEventListener("change", () => {
       toggleTaskCompleted(task.id, checkbox.checked);
     });
@@ -121,7 +118,6 @@ function renderTasks() {
   });
 }
 
-// Task operations
 function addTask() {
   const text = taskInput.value.trim();
   if (!text || !currentUser) return;
@@ -151,7 +147,7 @@ function editTask(id) {
   if (idx === -1) return;
 
   const newText = prompt("Edit task:", tasks[idx].text);
-  if (newText === null) return; // cancel
+  if (newText === null) return;
   const trimmed = newText.trim();
   if (!trimmed) return;
 
@@ -166,7 +162,6 @@ function deleteTask(id) {
   renderTasks();
 }
 
-// UI helpers
 function showLogin() {
   loginSection.classList.remove("hidden");
   todoSection.classList.add("hidden");
@@ -177,7 +172,6 @@ function showTodo() {
   todoSection.classList.remove("hidden");
 }
 
-// Event listeners
 loginForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const name = nameInput.value.trim();
@@ -217,11 +211,9 @@ taskInput.addEventListener("keyup", (e) => {
 logoutBtn.addEventListener("click", () => {
   currentUser = null;
   tasks = [];
-  // keep user and tasks in localStorage so user data is not lost
   showLogin();
 });
 
-// On page load: auto-login if user exists
 window.addEventListener("DOMContentLoaded", () => {
   const storedUser = loadUserFromStorage();
   if (storedUser && storedUser.email && isValidGmail(storedUser.email)) {

@@ -94,7 +94,6 @@ input:focus {
   text-align: center;
 }
 
-/* Todo section */
 .todo-header {
   display: flex;
   justify-content: space-between;
