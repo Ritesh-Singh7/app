@@ -1,0 +1,165 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(https://media.istockphoto.com/id/942618794/vector/vector-cartoon-landscape-with-purple-silhouettes-of-trees-mountains-and-lake.jpg?s=612x612&w=0&k=20&c=mQO4cvsychYPe4iNx2f-soi6oZqJf2xuShd1McXmz6M=);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  padding: 16px;
+}
+
+.card {
+  border-radius: 8px;
+  padding: 20px 24px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.hidden {
+  display: none;
+}
+
+h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+  font-size: 30px;
+}
+
+.form-control {
+  margin-bottom: 12px;
+}
+
+label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 20px;
+  color: #555;
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 20px;
+  background-color: transparent;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.3);
+}
+
+.btn {
+  background-color: #667eea;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: background 0.2s;
+  align-items: center;
+}
+
+.btn:hover {
+  background-color: #5563d6;
+}
+
+.btn-small {
+  padding: 4px 10px;
+  font-size: 12px;
+}
+
+.error {
+  margin-top: 8px;
+  color: #d93025;
+  font-size: 13px;
+  text-align: center;
+}
+
+/* Todo section */
+.todo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  font-size: 15px;
+}
+
+#user-name {
+  font-weight: 600;
+}
+
+.add-task {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+#task-input {
+  flex: 1;
+  color: #333;
+}
+
+#task-list {
+  list-style: none;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border-radius: 4px;
+  border: 1px solid #eee;
+  margin-bottom: 8px;
+}
+
+.task-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.task-text {
+  font-size: 18px;
+}
+
+.task-text.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.task-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.task-actions .btn {
+  padding: 4px 8px;
+  font-size: 12px;
+}
